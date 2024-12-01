@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-full border border-secondary px-4 py-2 text-sm transition-all duration-300 placeholder:text-secondary focus:outline-none focus:ring focus:ring-yellow-500 md:px-6 md:py-3;
+  }
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+  .loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-right-color: #facc15;
+    position: relative;
+    animation: loading 1s infinite linear;
+  }
+  .loader:before,
+  .loader:after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-right-color: #facc15;
+    animation: loading 2s infinite linear;
+  }
+  .loader:after {
+    animation-duration: 4s;
+  }
+  @keyframes loading {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+/* Scrollbar Styles */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background-color: #facc15;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #78716c;
+}
+/* Vertical scrollbar */
+*::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+/* Horizontal scrollbar */
+*::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
